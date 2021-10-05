@@ -10,16 +10,14 @@
 \ttl@starttoc {chapters@2}
 \contentsline {section}{\numberline {2.1}Let's introduce surface tension}{5}{section.7}%
 \contentsline {section}{\numberline {2.2}More stuff}{5}{section.8}%
-\contentsline {section}{\numberline {2.A}The interface profile of a sessile droplet in 2D}{5}{section.9}%
-\contentsline {subsection}{\numberline {2.A.1}Semi-analytical interface profile}{5}{subsection.10}%
-\contentsline {subsection}{\numberline {2.A.2}Discretisation}{6}{subsection.16}%
+\contentsline {section}{\numberline {2.A}An appendix}{5}{section.9}%
 \ttl@stoptoc {chapters@2}
-\contentsline {chapter}{\chapternumberline {3}Another chapter}{7}{chapter.21}%
+\contentsline {chapter}{\chapternumberline {3}Another chapter}{7}{chapter.10}%
 \ttl@stoptoc {chapters@2}
 \ttl@starttoc {chapters@3}
 \ttl@stoptoc {chapters@3}
-\contentsline {part}{\partnumberline {II}The second part}{8}{part.23}%
-\contentsline {chapter}{\chapternumberline {4}Yet another chapter}{11}{chapter.24}%
+\contentsline {part}{\partnumberline {II}The second part}{8}{part.12}%
+\contentsline {chapter}{\chapternumberline {4}Yet another chapter}{11}{chapter.13}%
 \ttl@stoptoc {chapters@3}
 \ttl@starttoc {chapters@4}
 \ttl@stoptoc {chapters@4}
