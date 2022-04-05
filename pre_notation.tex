@@ -1,0 +1,248 @@
+% NOTATION
+\newcommand\mtext[1]{\text{\normalfont\scshape #1}}
+\newcommand\stackrelwidth[2]{\stackrel{\mathmakebox[\widthof{#2}]{#1}}{#2}}
+
+\def\connectionc{c{(f,g,h)}}
+\def\gfmthing{{\Xi}}
+\newcommand\sgrad[1]{g^{#1}(p,\xi)}
+\newcommand\sgradf[1]{g^{#1}_f(p,\xi)}
+\newcommand\sgraddag[1]{g^{#1}(p^\dagger,0)}
+\newcommand\sgradone{\bar{g}(p)}
+\newcommand\sgradonedag{\bar{g}(p^\dagger)}
+
+\def\stagger{\widetilde}
+\def\onevelo{\bar{u}}
+\def\Onevelo{\bar{\+u}}
+\def\volumeflux{\upsilon}
+\def\volumefluxOne{\bar\volumeflux}
+\def\volumefluxOneStag{\stagger{\bar\volumeflux}}
+\def\volumefluxMom{\stagger\volumeflux}
+\def\volumefluxTwo{\hat\volumeflux}
+\def\volumefluxcc{\hat{\hat\volumeflux}}
+
+\def\massflux{m}
+\def\massfluxOne{\bar{m}}
+\def\massfluxOneStag{\stagger{\bar{m}}}
+\def\massfluxTwo{\widehat{m}}
+
+\newcommand\dr{{\Delta}}
+\newcommand\drOne{{\bar\dr}}
+\newcommand\drOneStag{\stagger{\bar\dr}}
+\newcommand\drTwo{{\hat\dr}}
+\newcommand\drMom{{\stagger\dr}}
+\newcommand\drcc{\hat{\hat\dr}}
+
+\def\volfrac{\alpha}
+\def\volfracstag{\stagger\alpha}
+
+\def\avar{\varphi} 
+\def\avarstag{\varphi}
+\def\Avarstag{{\+\varphi}}
+
+\def\orientation{o}
+\def\dt{{\delta t}}
+\def\dh{{h}}
+% \def\dx{{\delta x}}
+% \def\dy{{\delta y}}
+% \def\dz{{\delta z}}
+\def\dx{{\dh}}
+\def\dy{{\dh}}
+\def\dz{{\dh}} 
+\def\twofluid{two-velocity }
+\def\onefluid{one-velocity }
+\def\Onefluid{One-velocity }
+\def\Twofluid{Two-velocity } 
+\def\centflux{\bar{\+\upsilon}}
+\def\interface{I}
+\def\interpolant{\mathfrak{I}}
+\def\interpolanthalf{\interpolant_{\half}}
+\def\interpolantalpha{\interpolant_{\volfrac}}
+\def\interpolanthalfstag{\stagger\interpolant_{\half}}
+\def\interpolantsbp{\interpolant_{|c|}}
+\def\interpolantflux{\stagger\interpolant_{|f|}}
+\newcommand\fluxinterp{{\mathfrak{F}}}
+\newcommand\fluxinterpstag{\stagger{\mathfrak{F}}}
+\newcommand\tanginterp{\stagger{\mathfrak{U}}}
+\newcommand\jumpOper{\mathfrak{J}}
+
+\def\normalstag{\stagger{\+\eta}}
+\def\tangentstag{\stagger{\+\tau}}
+
+\def\lambdamarginal{\lambda_\circ}
+\def\wavenrmarginal{k_\circ}
+
+\newcommand\posflux[1]{\squarepar{#1}^+}
+\newcommand\negflux[1]{\squarepar{#1}^-}
+\newcommand\minfracval{\volfrac^\dagger}
+\newcommand\wycflval{\nu^\dagger}
+\newcommand\mathcfl{\nu}
+
+\newcommand\pindex{\mathcal{S}}
+\newcommand\pathlinetype[1]{\mathcal{Q}_#1}
+
+\def\level{L}
+\def\basemesh{h_0}
+
+
+\newcommand{\+}[1]{\boldsymbol{\ensuremath{\mathbf{#1}}}}
+
+\newcommand\real[1]{\Re\left(#1\right)}
+\newcommand\imaginary[1]{\Im\left(#1\right)}
+
+\newcommand\roundpar[1]{\left( #1 \right)}
+\newcommand\squarepar[1]{\left[ #1 \right]}
+\newcommand\curlypar[1]{\left\lbrace #1 \right\rbrace}
+
+\newcommand\oneDIntegral[4]{\int_{#1}^{#2} #3 \hspace{1ex} d#4}
+\newcommand\integral[3]{\int_{#1} #2 \hspace{1ex} d#3}
+\newcommand\ointegral[3]{\oint_{#1} #2 \hspace{1ex} d#3}
+\newcommand\integralpar[3]{\integral{#1}{\squarepar{#2}}{#3}}
+
+\newcommand\eqdef{=\mathrel{\mathop:}}
+\newcommand\defeq{\mathrel{\mathop:}=}
+
+\newcommand\flowmap[2]{\Phi^{#1}_{#2}}
+\newcommand\amr[1]{(#1)}
+
+\newcommand\half{\frac{1}{2}}
+\newcommand\trace[1]{\text{tr}(#1)}
+\newcommand\tr{\text{tr}}
+\DeclareMathOperator{\erff}{erf}
+\DeclareMathOperator{\erfc}{erfc}
+
+\def\interface{I}
+\def\csfnormal{\hat{\+\eta}}
+% \def\apertnormalstag{\stagger{\hat{\+\eta}}}
+% \def\aperttau{\hat{\+\tau}}
+\def\apertnormal{\+\eta^a}
+\def\apertnormalstag{\stagger{\+\eta}^a}
+\def\aperttau{\+\tau^a}
+\def\hessian{H}
+\def\Hessian{\+H} 
+
+\newcommand\advection[2]{A[#1]#2}
+\newcommand\advectionstag[2]{\stagger{A}[#1]#2}
+\def\tvar{\mathcal{T}}
+
+\def\symmgrad{\hat S}
+\def\asymmgrad{\reflectbox{$\hat S$}}
+
+% NB: see https://tex.stackexchange.com/questions/14386/importing-a-single-symbol-from-a-different-font
+% Setup the matha font (from mathabx.sty)
+\DeclareFontFamily{U}{mathx}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathx}{m}{n}{
+      <5> <6> <7> <8> <9> <10>
+      <10.95> <12> <14.4> <17.28> <20.74> <24.88>
+      mathx10
+      }{}
+\DeclareSymbolFont{mathx}{U}{mathx}{m}{n}
+\DeclareMathAccent{\widecheck}    {0}{mathx}{"71}
+\newcommand\approximate[1]{\widecheck{#1}}
+
+\def\facetanginterp{\mathfrak{I}}
+
+\newcommand\gradient{\nabla} 
+\newcommand\divergence{\gradient \cdot}
+\newcommand\curl{\gradient \times}
+\newcommand\laplace{\Delta}
+
+\newcommand\dydx[2]{\frac{\partial #1}{\partial #2}}
+\newcommand\abs[1]{\left\lvert #1 \right\rvert}
+\newcommand\norm[1]{\lVert #1 \rVert}
+
+\newcommand\evalAt[2]{\left.#1\right|_{#2}}
+\newcommand\waveamplitude{\delta}
+
+\newcommand\kappaF{\stagger\kappa}
+\newcommand\linepart{L}
+ 
+\usepackage{stmaryrd}
+\newcommand\jump[1]{\left\llbracket#1\right\rrbracket}
+\newcommand\surfaceGradient{\nabla_s}
+
+\newcommand\erf{\textrm{\emph{erf}}}
+% \newcommand\sign{\text{sign}}
+\DeclareMathOperator{\sign}{sgn}
+\DeclareMathOperator{\atan}{atan}
+
+\renewcommand*{\complement}{\mathsf{c}}
+\newcommand\symmdiff{\triangle}
+\newcommand\halfspace[1]{l\roundpar{#1}}
+
+% double brace
+\newcommand\mean[1]{\dgal*{#1}}
+\usepackage{xparse}
+\NewDocumentCommand{\dgal}{sO{}m}{%
+  \IfBooleanTF{#1}
+    {\dgalext{#3}}
+    {\dgalx[#2]{#3}}%
+}
+
+\NewDocumentCommand{\dgalext}{m}{%
+  \sbox0{%
+    \mathsurround=0pt % just for safety
+    $\left\{\vphantom{#1}\right.\kern-\nulldelimiterspace$%
+  }%
+  \sbox2{\{}%
+  \ifdim\ht0=\ht2
+    \{\kern-.625\wd2 \{#1\}\kern-.625\wd2 \}%
+  \else
+    \left\{\kern-.7\wd0\left\{#1\right\}\kern-.7\wd0\right\}%
+  \fi
+}
+
+\NewDocumentCommand{\dgalx}{om}{%
+  \sbox0{\mathsurround=0pt$#1\{$}%
+  \sbox2{\{}%
+  \ifdim\ht0=\ht2
+    \{\kern-.625\wd2 \{#2\}\kern-.625\wd2 \}%
+  \else
+    \mathopen{#1\{\kern-.7\wd0 #1\{}
+    #2
+    \mathclose{#1\}\kern-.7\wd0 #1\}}
+  \fi
+}
+
+
+\newcommand\set[2]{
+  \{\,#1 \mid #2\,\}
+}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\img}{img}
+
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+
+% PHYSICS
+\def\knudsen{\text{Kn}}
+\def\reynolds{\text{Re}}
+\def\froude{\text{Fr}}
+\def\weber{\text{We}}
+\def\bond{\text{Bo}}
+\def\mach{\text{Ma}}
+\def\jakob{\text{Ja}}
+\def\atwood{\text{At}}
+\def\ohnesorge{\text{Oh}}
+\def\capillary{\text{Ca}}
+\def\laplacenr{\text{La}}
+\def\cfl{\text{\gls{cfl}}}
+\def\galilei{\text{Ga}}
+\newcommand\ratio[1]{\mathcal{R}_{#1}}
+\newcommand\ratiofull[1]{{#1^g}/{#1^l}}
+
+\def\siangle{^\circ}
+\def\simass{\mtext{kg}}
+\def\silength{\mtext{m}}
+\def\sitime{\mtext{s}}
+\def\sitemperature{\mtext{K}}
+\def\sipressure{\mtext{Pa}}
+\def\sienergy{\mtext{J}}
+
+\def\sispace{\>}
+% derived
+\def\sivelocity{\silength/\sitime}
+\def\siacceleration{\silength/\sitime^2}
+\def\sidensity{\simass/\silength^{3}}
+
+\newcommand\todo[1]{{\color{red} [{\bfseries \tiny \underline{TODO}} #1]}}

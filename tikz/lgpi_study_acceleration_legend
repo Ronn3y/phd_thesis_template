@@ -1,0 +1,30 @@
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor3}{rgb}{0.46600,0.67400,0.18800}%
+\definecolor{mycolor4}{rgb}{0.49400,0.18400,0.55600}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+  hide axis,
+  width=2cm,
+  height=2cm,
+  ymin=0.99,
+  ymax=1,
+  legend style={at={(0.5,1.03)}, anchor=south, legend columns=6, legend cell align=left, align=left, draw=white!15!black},
+  ]
+  \addlegendimage{empty legend}
+  \addlegendentry{$t/T^{1:s}_g$: }
+
+  \addplot [line width=1.0pt, color=mycolor1, domain=-0.1:0.1,samples=2, draw=none] {1};
+  \addlegendentry{$0.5742$}
+  \addplot [line width=1.0pt, color=mycolor2, domain=-0.1:0.1,samples=2, draw=none] {1};
+  \addlegendentry{$0.5764$}
+  \addplot [line width=1.0pt, color=mycolor3, domain=-0.1:0.1,samples=2, draw=none] {1};
+  \addlegendentry{$0.5786$}
+  \addplot [line width=1.0pt, color=mycolor4, domain=-0.1:0.1,samples=2, draw=none] {1};
+  \addlegendentry{$0.5809$}
+  
+  
+\end{axis}
+\end{tikzpicture}%

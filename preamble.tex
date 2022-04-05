@@ -1,15 +1,153 @@
 % MATH
-\usepackage{amsmath,amsthm,amssymb}
+\usepackage{amsmath,amsthm,amssymb,scalerel}
 \usepackage{bm}
-\usepackage{mathtools}
+\usepackage{mathtools,thmtools}
+\usepackage{tcolorbox}
+
+% GRAPHICS
+\usepackage{import}
+
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{rotating}
+\usetikzlibrary{
+  matrix,
+  external,
+  arrows.meta
+}
+\tikzexternalize[prefix=pdf/]
+% \tikzset{external/system call={pdflatex \tikzexternalcheckshellescape -halt-on-error
+%   -interaction=batchmode -jobname "\image" "\texsource" && % or ;
+%   pdftops -f 1 -l 1 -eps "\image".pdf}}
+\tikzset{external/system call={pdflatex \tikzexternalcheckshellescape -halt-on-error
+  -interaction=batchmode -jobname "\image" "\texsource" && % or ;
+  pdfseparate -f 1 -l 1 "\image".pdf "\image"_tmp.pdf &&
+  mv "\image"_tmp.pdf "\image".pdf}}
 
 
 % LAYOUT
+\usepackage{lipsum}  
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english]{babel}
-\setsecnumdepth{subsection}
+\usepackage{subcaption}
+\usepackage{fmtcount}
+\captionsetup{font+=smaller,labelfont={sc,bf},labelsep=period}
+\captionsetup[sub]{labelformat=simple,labelsep=period}
+\def\onefigwidth{\textwidth}
+\def\twofigwidth{0.475\textwidth}
+\def\threefigwidth{0.3\textwidth}
 
+\chapterstyle{dash}
+\renewcommand*{\thechapter}{\arabic{chapter}}
+\renewcommand*{\printchaptername}{---\enspace\normalfont\slshape{\Ordinalstring{chapter}[f] chapter}\enspace---\centering}
+\renewcommand\chaptitlefont{\normalfont\huge\scshape\bfseries\centering}
+\renewcommand\printchapternum{}
+
+% Remove centred footer pagenumber on first page of part and chapter
+\copypagestyle{chapter}{plain}% Copy plain page syle to chapter page style
+\makeoddfoot{chapter}% Adjust odd footer for chapter page style
+  {}% Left odd footer
+  {}% Center odd footer
+  {}% Right odd footer
+
+\copypagestyle{part}{plain}% Copy plain page syle to part page style
+\makeoddfoot{part}% Adjust odd footer for part page style
+  {}% Left odd footer
+  {}% Center odd footer
+  {}% Right odd footer
+
+% TABLE OF CONTENTS STYLE
+\setsecnumdepth{subsection}
+\renewcommand*{\cftpartfont}{\normalfont\LARGE\scshape\bfseries}
+\renewcommand*{\cftchapterfont}{\normalfont\scshape\bfseries}
+\renewcommand*{\cftsectionfont}{\normalfont}
+\renewcommand*{\cftsubsectionfont}{\normalfont}
+
+\usepackage{titletoc}
+\usepackage{libertine}
+\setcounter{tocdepth}{2}
+
+\makeatletter
+\renewcommand{\partnumberline}[1]{{\normalfont\normalsize\slshape ---\enspace Part #1\enspace ---}\\}
+\renewcommand*{\l@part}[2]{%
+  \ifnum \c@tocdepth >-2\relax
+    \cftpartbreak
+    \begingroup
+      {
+        \setlength{\memRTLleftskip}{0pt}
+        \setlength{\memRTLrightskip}{0pt}
+        \interlinepenalty\@M
+        \centering
+        \cftpartfont #1
+        \par
+      }
+      \nobreak
+        \global\@nobreaktrue
+        \everypar{\global\@nobreakfalse\everypar{}}%
+    \endgroup
+    \cftpartbreak
+  \fi}
+\makeatother
+
+
+
+% PART STYLE
+\renewcommand*{\thepart}{\arabic{part}}
+\renewcommand*{\parttitlefont}{\normalfont\Huge\bfseries\scshape}
+\renewcommand*{\partnamefont}{\normalfont\slshape}
+% \renewcommand*{\partnumfont}{\normalfont\scshape\MakeLowercase}
+\renewcommand*{\printpartname}{---\enspace\partnamefont{\Ordinalstring{part}[f] part}\enspace---}
+% \renewcommand*{\printpartname}{\decofourleft\enspace\partnamefont{\Ordinalstring{part}[f] part}\enspace\decofourright}
+\renewcommand*{\printpartnum}{}
+
+\setsecheadstyle{\centering\large\bfseries\scshape}
+\setbeforesecskip{-1\onelineskip plus -1ex minus -.2ex}
+\setaftersecskip{1\onelineskip plus .2ex}
+
+\setsubsecheadstyle{\centering\scshape} 
+\setbeforesubsecskip{-1\onelineskip plus -1ex minus -.2ex}
+\setaftersubsecskip{1\onelineskip plus .2ex}
+
+\setsubsubsecheadstyle{\centering\scshape} 
+\setbeforesubsubsecskip{-1\onelineskip plus -1ex minus -.2ex}
+% \setaftersubsubsecskip{1\onelineskip plus .2ex}
+
+% HEADERS AND FOOTERS
+\makeatletter
+\renewcommand{\chaptermark}[1]{%
+  \markboth{%
+    \ifnum\c@secnumdepth>\m@ne
+      \@chapapp\ {\footnotesize\thechapter}. \ %
+    \fi
+  #1%
+  }{}%
+}
+\renewcommand{\sectionmark}[1]{%
+  \markright{%
+  \ifnum \c@secnumdepth >\z@
+    {\footnotesize\thesection}. \ %
+  \fi
+  #1%
+  }{}%
+}
+\makeatother
+
+\makeevenhead{headings}{\thepage}{}{\normalfont\small\scshape\leftmark}
+\makeoddhead{headings}{\normalfont\small\scshape\rightmark}{}{\thepage}
+
+%% ABSTRACT PER CHAPTER
+\AtBeginDocument{
+  \renewcommand{\abstractname}{}
+  \renewcommand{\absnamepos}{empty} 
+  \renewcommand{\abstractnamefont}{\normalfont\small\scshape\bfseries}
+  \renewcommand{\abstracttextfont}{\normalfont\small\itshape}
+}
+
+
+%% ABSTRACT PER PART
 % https://tex.stackexchange.com/questions/352965/abstract-for-each-part-in-book-class
 \usepackage{xpatch}
 \makeatletter
@@ -26,44 +164,69 @@
 \newcommand{\@abstract}{}
 \makeatother
 
-\usepackage{shorttoc}
-\usepackage{titletoc}
-\usepackage{libertine}
-\newcommand\partialtocname{Chapter contents}
-\newcommand\ToCrule{\noindent\rule[5pt]{\textwidth}{1.3pt}}
-\newcommand\ToCtitle{{\large\bfseries\partialtocname}\vskip2pt\ToCrule}
-\makeatletter
-\newcommand\Mprintcontents{
-  \hypersetup{
-      linkcolor={black}
-  }
-  \ToCtitle
-  % \ttl@printlist[chapters]{toc}{}{1}{}\par\nobreak
-  \ttl@printlist[chapters]{toc}{1}{1}{2}\par\nobreak
-  \ToCrule
-  }
-\makeatother
 
-\usepackage[hypertexnames=false]{hyperref}
+%% REFERENCES
+\usepackage[hypertexnames=true]{hyperref} % false: forward page ref breaks in acronym list
 \hypersetup{
     colorlinks,
     linkcolor={red!50!black},
     citecolor={red!50!black},
-    urlcolor={red!80!black}
+    urlcolor={red!50!black}
 }
 \usepackage{cleveref}
+\crefdefaultlabelformat{#2{\scshape #1}#3} % small caps subfigure reference
 \usepackage{autonum}
+\newcommand\caref[1]{eq.~\eqref{#1}} % autonum fails with thm-restate if the thm contains an equation, so instead we must use 
+
+\usepackage[acronym,toc,indexonlyfirst]{glossaries}
+\renewcommand{\glossarypreamble}{\glsfindwidesttoplevelname[\acronymtype] \setlength{\parskip}{0pt}} % <--------- THAT IS THE KEY, NOW USING alttree style.
+\renewcommand*\glspostdescription{\dotfill}
+\newglossarystyle{owngloss}{%
+    \setglossarystyle{treegroup}%
+    \renewcommand*{\glossentry}[2]{%
+        \glsentryitem{##1}\textbf{\glstarget{##1}{\glossentryname{##1}}}%
+        \\ \glossentrydesc{##1} \\ \par
+    }%
+}
+
+\newglossary[slg]{symbolslist}{syi}{syg}{} % create add. symbolslist
+\loadglsentries{glossaries.tex}
+\renewcommand*{\glstextformat}[1]{\textcolor{black}{#1}}
+\makeglossaries
 
 \usepackage{microtype}
 \makeatletter\AtBeginDocument{\let\@elt\relax}\makeatother
 
-\usepackage{thmtools, thm-restate}
-\declaretheorem{theorem}
-\declaretheorem{lemma}
-\declaretheorem{definition}
-\declaretheorem{example}
-\declaretheorem{remark}
+\let\leftbar\undefined
+\let\endleftbar\undefined
 
-\usepackage[numbers]{natbib}
+\declaretheoremstyle[
+  spaceabove=6pt, spacebelow=3pt,
+  headfont=\scshape\bfseries,
+  notefont=\mdseries, notebraces={(}{)},
+  bodyfont=\itshape,
+  postheadspace=1em,
+  qed=
+]{mythmstyle}
+\theoremstyle{mythmstyle}
+
+\declaretheorem[style=mythmstyle]{theorem}
+\declaretheorem[style=mythmstyle]{lemma}
+\declaretheorem[style=mythmstyle]{corollary}
+\declaretheorem[style=mythmstyle]{definition}
+\declaretheorem[style=mythmstyle]{remark}
+\declaretheorem[style=mythmstyle]{example}
+
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{booktabs} % fancy rules in tables
+
+\usepackage[numbers,sort&compress]{natbib}
 \bibliographystyle{apalike}
- 
+
+\newcommand\inputtikz[1]{
+  \tikzsetnextfilename{#1}
+  \input{tikz/#1}
+}
+
+\input{pre_notation}

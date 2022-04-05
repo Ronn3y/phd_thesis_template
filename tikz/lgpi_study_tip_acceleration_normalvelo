@@ -1,0 +1,47 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.00000,0.44700,0.74100}%
+\definecolor{mycolor2}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor3}{rgb}{0.46600,0.67400,0.18800}%
+\definecolor{mycolor4}{rgb}{0.49400,0.18400,0.55600}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=12.206in,
+height=9.878in,
+at={(2.047in,1.333in)},
+scale only axis,
+xmin=0.574,
+xmax=0.581,
+xlabel style={font=\color{white!15!black}},
+xlabel={$t / T^{1:s}_g$},
+ymin=0.5,
+ymax=0.64,
+ylabel style={font=\color{white!15!black}},
+ylabel={$u^{1:s}_\eta / \sqrt{s}$},
+axis background/.style={fill=white},
+axis x line*=bottom,
+axis y line*=left,
+width=\tikzWidth,
+height=\tikzHeight,
+at={(0,0)}
+]
+\addplot [color=black, line width=1.0pt, forget plot]
+  table[]{/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_normalvelo-1.tsv};
+\addplot [color=black, dashed, line width=1.0pt, forget plot]
+  table[]{/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_normalvelo-2.tsv};
+\addplot [color=mycolor1, line width=1.0pt, draw=none, mark size=1.7pt, mark=*, mark options={solid, mycolor1}, forget plot]
+  table[]{/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_normalvelo-3.tsv};
+\addplot [color=mycolor2, line width=1.0pt, draw=none, mark size=1.7pt, mark=*, mark options={solid, mycolor2}, forget plot]
+  table[]{/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_normalvelo-4.tsv};
+\addplot [color=mycolor3, line width=1.0pt, draw=none, mark size=1.7pt, mark=*, mark options={solid, mycolor3}, forget plot]
+  table[]{/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_normalvelo-5.tsv};
+\addplot [color=mycolor4, line width=1.0pt, draw=none, mark size=1.7pt, mark=*, mark options={solid, mycolor4}, forget plot]
+  table[]{/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_normalvelo-6.tsv};
+\end{axis}
+\end{tikzpicture}%

@@ -1,0 +1,38 @@
+% !TEX root = ./thesis.tex
+\section{Introduction}
+\lipsum[5]
+
+\subsection{Specifics}
+The following has a very difficult proof~\citep*{lagree2011granular_custom}, which can be found in~\cref{sec:app:exact_dr}.
+\begin{restatable}[Very important theorem]{theorem}{thmimportant}\label{lem:int:centroid:unsplit_as_remap}
+  For real numbers $x, y, z \in \mathbb{R}$ it holds that
+  \begin{eqnarray}
+    \abs{x - z} \le \abs{x - y} + \abs{y - z}.
+  \end{eqnarray}
+  % NOTE: autonum fails with thm-restate if the thm contains an equation, so instead we must use eqnarray and refer to it using \caref
+\end{restatable}
+
+
+\begin{corollary}[Obvious consequence]
+  \begin{equation}
+    \abs{1 -3} \le \abs{1 - 2} + \abs{2 - 3}.
+  \end{equation}  
+\end{corollary}
+\begin{proof}
+  Let $x = 1, y = 2$ and $z = 3$ in~\cref{lem:int:centroid:unsplit_as_remap}.
+\end{proof}
+
+\subsection{Volume of fluid method}
+\begin{figure}
+  \centering
+  \import{inkscape/}{mass_transport.pdf_tex}
+  \caption{\lipsum[6]}
+  \label{fig:interface:mass_transport}
+\end{figure}
+The \gls{vof} method aims at tracking the volume of fluid per control volume, or equivalently the volume fraction in time.
+Conservation of the total liquid (or equivalently gas) volume amounts to conservation of mass for incompressible fluids, as are considered here, and therefore the \gls{vof} method is a popular choice when mass conservation is of interest.
+See also~\citet{Basilisk,IMO2020}.
+
+If I want the acronym to be written in full, I use \glsentrylong{vof}, and if I want it to be written short: \glsentryshort{vof}, and both: \glsentryfull{vof}.
+To have a clickable full reference we can use \glsfirst{vof}.
+

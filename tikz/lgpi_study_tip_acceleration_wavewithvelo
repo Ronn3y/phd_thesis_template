@@ -1,0 +1,71 @@
+% This file was created by matlab2tikz.
+%
+%The latest updates can be retrieved from
+%  http://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz
+%where you can also make suggestions and rate matlab2tikz.
+%
+\definecolor{mycolor1}{rgb}{0.49400,0.18400,0.55600}%
+\definecolor{mycolor2}{rgb}{0.46600,0.67400,0.18800}%
+\definecolor{mycolor3}{rgb}{0.85000,0.32500,0.09800}%
+\definecolor{mycolor4}{rgb}{0.00000,0.44700,0.74100}%
+%
+\begin{tikzpicture}
+
+\begin{axis}[%
+width=12.206in,
+height=9.878in,
+at={(2.047in,1.333in)},
+scale only axis,
+xmin=0.01,
+xmax=0.03,
+xlabel style={font=\color{white!15!black}},
+xlabel={$x / \lambda^{1:s}$},
+ymin=0.307,
+ymax=0.327,
+ylabel style={font=\color{white!15!black}},
+ylabel={$y / \lambda^{1:s}$},
+axis background/.style={fill=white},
+axis x line*=bottom,
+axis y line*=left,
+width=\tikzWidth,
+height=\tikzHeight,
+at={(0,0)}
+]
+
+\addplot[area legend, draw=none, fill=white, forget plot]
+table[] {/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-1.tsv}--cycle;
+\addplot [color=mycolor1, line width=1.0pt, forget plot]
+  table[]{/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-2.tsv};
+\addplot [color=mycolor1, line width=1.0pt, draw=none, mark size=1.7pt, mark=*, mark options={solid, mycolor1}, forget plot]
+  table[]{/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-3.tsv};
+\addplot[-Straight Barb, color=mycolor1, line width=1.0pt, point meta={sqrt((\thisrow{u})^2+(\thisrow{v})^2)}, point meta min=0, quiver={u=\thisrow{u}, v=\thisrow{v}, every arrow/.append style={-{Straight Barb[angle'=18.263, scale={10/1000*\pgfplotspointmetatransformed}]}}}]
+ table[] {/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-4.tsv};
+
+\addplot[area legend, draw=none, fill=white, forget plot]
+table[] {/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-5.tsv}--cycle;
+\addplot [color=mycolor2, line width=1.0pt, forget plot]
+  table[]{/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-6.tsv};
+\addplot [color=mycolor2, line width=1.0pt, draw=none, mark size=1.7pt, mark=*, mark options={solid, mycolor2}, forget plot]
+  table[]{/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-7.tsv};
+\addplot[-Straight Barb, color=mycolor2, line width=1.0pt, point meta={sqrt((\thisrow{u})^2+(\thisrow{v})^2)}, point meta min=0, quiver={u=\thisrow{u}, v=\thisrow{v}, every arrow/.append style={-{Straight Barb[angle'=18.263, scale={10/1000*\pgfplotspointmetatransformed}]}}}]
+ table[] {/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-8.tsv};
+
+\addplot[area legend, draw=none, fill=white, forget plot]
+table[] {/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-9.tsv}--cycle;
+\addplot [color=mycolor3, line width=1.0pt, forget plot]
+  table[]{/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-10.tsv};
+\addplot [color=mycolor3, line width=1.0pt, draw=none, mark size=1.7pt, mark=*, mark options={solid, mycolor3}, forget plot]
+  table[]{/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-11.tsv};
+\addplot[-Straight Barb, color=mycolor3, line width=1.0pt, point meta={sqrt((\thisrow{u})^2+(\thisrow{v})^2)}, point meta min=0, quiver={u=\thisrow{u}, v=\thisrow{v}, every arrow/.append style={-{Straight Barb[angle'=18.263, scale={10/1000*\pgfplotspointmetatransformed}]}}}]
+ table[] {/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-12.tsv};
+
+\addplot[area legend, draw=none, fill=white, forget plot]
+table[] {/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-13.tsv}--cycle;
+\addplot [color=mycolor4, line width=1.0pt, forget plot]
+  table[]{/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-14.tsv};
+\addplot [color=mycolor4, line width=1.0pt, draw=none, mark size=1.7pt, mark=*, mark options={solid, mycolor4}, forget plot]
+  table[]{/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-15.tsv};
+\addplot[-Straight Barb, color=mycolor4, line width=1.0pt, point meta={sqrt((\thisrow{u})^2+(\thisrow{v})^2)}, point meta min=0, quiver={u=\thisrow{u}, v=\thisrow{v}, every arrow/.append style={-{Straight Barb[angle'=18.263, scale={10/1000*\pgfplotspointmetatransformed}]}}}]
+ table[] {/home/ronald/git_repos/phd_project/thesis/tikz/lgpi_study_tip_acceleration_wavewithvelo-16.tsv};
+\end{axis}
+\end{tikzpicture}%

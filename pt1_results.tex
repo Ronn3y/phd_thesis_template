@@ -1,0 +1,24 @@
+\section{Results}
+Is there a \gls{rt} instability?
+
+\begin{figure}
+  \centering 
+  \tikzsetnextfilename{lgpi_study_acceleration_legend}
+  \inputtikz{lgpi_study_acceleration_legend}
+
+  \captionbox{The interface profile several time instances.
+  The arrows indicate the interface normal, with magnitude proportional to the interface normal velocity $u_\eta$.
+  The solid marker indicates the left-most position of the lower part of the wave tip, and is used in~\cref{fig:results:wave3d:accel_normalvelo} to determine the wave tip acceleration.\label{fig:results:wave3d:accel_wavewithvelo}}
+  [\twofigwidth]{
+    \def\tikzWidth{\textwidth*0.35}
+    \def\tikzHeight{\textwidth*0.35}
+    \inputtikz{lgpi_study_tip_acceleration_wavewithvelo_custom}
+  }\hfill
+  \captionbox{The interface normal velocity as function of time, at the wave tip position as indicated by the markers in~\cref{fig:results:wave3d:accel_wavewithvelo}.
+  The dashed line shows a linear least-squares fit with slope given by $\ddot{x}_\mtext{Tip} \approx -89\sivelocity$$^2$, which we subsequently use as the wave tip acceleration resulting in $\lambda_\mtext{\gls{rt}} \approx 9.8$mm.\label{fig:results:wave3d:accel_normalvelo}}
+  [\twofigwidth]{
+    \def\tikzWidth{\textwidth*0.35}
+    \def\tikzHeight{\textwidth*0.35}
+    \inputtikz{lgpi_study_tip_acceleration_normalvelo_custom}
+  }
+\end{figure} 
